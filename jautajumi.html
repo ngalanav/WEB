@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTU imposible quiz</title>
+    <link rel="stylesheet" href="style-q.css">
+    
+    
+</head>
+<body>
+    <div class="side-panel">
+        <h2>Jautājumi</h2>
+        <nav>
+            <a href="#q1">Jautajums 1</a>
+            <a href="#q2">Jautajums 2</a>
+            <a href="#q3">Jautajums 3</a>
+            <a href="#q4">Jautajums 4</a>
+            <a href="#q5">Jautajums 5</a>
+            <a href="#q6">Jautajums 6</a>
+            <a href="#q7">Jautajums 7</a>
+            <a href="#q8">Jautajums 8</a>
+            <a href="#q9">Jautajums 9</a>
+            <a href="#q10">Jautajums 10</a>
+            <a href="#q11">Jautajums 11</a>
+            <a href="#q12">Jautajums 12</a>
+        </nav>
+    </div>
+    <div class="quiz-wrapper">
+    <form class="quiz-container" id="quizForm">
+        <h1>DITEF tests</h1>
+        <div class="question" id="q1">
+            <p>1. Kā DITF atšifrē?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback1"></div>
+        </div>
+        <div class="question" id="q2">
+            <p>2. Kuras fakultātes apvienoja DITEF? (Vairākas atbildes)</p>
+            <label class="custom-checkbox">Fakultāte A
+                <input type="checkbox" name="q2" value="Fakultāte A">
+            </label>
+            <label class="custom-checkbox">Fakultāte B
+                <input type="checkbox" name="q2" value="Fakultāte B">
+            </label>
+            <label class="custom-checkbox">Fakultāte C
+                <input type="checkbox" name="q2" value="Fakultāte C">
+            </label>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+        <div class="question" id="q3">
+            <p>3. Kurai fakultātei pieder šī ēka?</p>
+            <img src="faculty_building.jpg" alt="Faculty Building" class="q-img"><br>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback3"></div>
+        </div>
+        <div class="question" id="q4">
+            <p>4. Kā sauc DITEF fakultātes dekānu?</p>
+            <label class="custom-radio">Dekāns 1
+                <input type="radio" name="q4" value="dekāns1">
+            </label>
+            <label class="custom-radio">Dekāns 2
+                <input type="radio" name="q4" value="dekāns2">
+            </label>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+        <div class="question" id="q5">
+            <p>5. Kuras fakultātes studenti ir vislielākajā izmisumā? (Radio pogas, visas atbildes pareizas)</p>
+            <label class="custom-radio">Fakultāte 1
+                <input type="radio" name="q5" value="fakultāte1">
+                <span class="radio-mark"></span>
+            </label>
+            <label class="custom-radio">Fakultāte 2
+                <input type="radio" name="q5" value="fakultāte2">
+            </label>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+        <div class="question" id="q6">
+            <p>6. Kura fakultāte DITEF tiek vainota visās nepatikšanās?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback6"></div>
+        </div>
+        <div class="question" id="q7">
+            <p>7. Kādu lektoru pasniedza operētājsistēma?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback7"></div>
+        </div>
+        <div class="question" id="q8">
+            <p>8. Kur atrodas RTU galvenā ēka?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback8"></div>
+        </div>
+        <div class="question" id="q9">
+            <p>9. Kurš dzīvnieks ir DITEF simbols?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback9"></div>
+        </div>
+        <div class="question" id="q10">
+            <p>10. Cik studentu apmeklē pirmo lekciju?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback10"></div>
+        </div>
+        <div class="question" id="q11">
+            <p>11. Lielākā lektorija?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback11"></div>
+        </div>
+        <div class="question" id="q12">
+            <p>12. Kurā gadā tika dibināta RTU?</p>
+            <input type="text" placeholder="Jūsu atbilde">
+            <div class="feedback" id="feedback12"></div>
+        </div>
+        <button type="submit" class="submit-button">Submit Quiz</button>
+    </form>
+    <div class="right-panel">
+        <a href="index.html"><img src="qlogo.png" alt="Company Logo" class="quiz-logo"></a>
+        <div class="timer-container">
+            <div class="circle-timer">
+                <div class="time-content">
+                    <span id="timer">00:15:00</span>
+                    <div>Atlikušais laiks</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+

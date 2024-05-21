@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.side-panel {
+    position: fixed;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 100px;
+    margin-left: -600px; /*space for quiz nav*/
+    z-index: 1000;
+    
+}
+
+.side-panel h2 {
+    margin-top: 0;
+}
+
+.side-panel nav a {
+    display: block;
+    padding: 8px;
+    color: #000;
+    text-decoration: none;
+}
+
+.side-panel nav a:hover {
+    background-color: #e0e0e0;
+}
+
+
+.quiz-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.quiz-container {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 300px;
+    margin-right: 20px;
+}
+
+.question {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 16px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #eef;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+li button:hover {
+    background-color: #dde;
+}
+
+h1 {
+    color: #505050;
+    text-align: center;
+}
+
+.quiz-container {
+    width: 90%;
+    padding: 20px;
+}
+.q-img {
+    width: 300px;
+    margin-bottom: 10px;
+}
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+.submit-button:active {
+    background-color: #777; 
+}
+
+.submit-button:focus {
+    border: 1px solid #aaa; 
+}
+
+.custom-radio, .custom-checkbox {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.custom-checkbox input, .custom-radio input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.custom-checkbox:hover, .custom-radio:hover {
+    background-color: #cccccc;
+}
+
+label:has(input:checked) {
+    background-color: #aaa;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #666;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+
+input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.right-panel {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    margin-left:1050px;
+    margin-top:100px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.quiz-logo {
+    width: 100%;
+    height: auto;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.circle-timer {
+    width: 200px;
+    height: 200px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #00B9F1;
+    box-shadow: 0 0 13px #008eb9;
+}
+
+.time-content {
+    text-align: center;
+}
+
+.time-content span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00B9F1;
+}
+
+.time-content div {
+    font-size: 16px;
+    color: #00B9F1;
+}
+
+.feedback {
+    margin-top: 10px;
+}
