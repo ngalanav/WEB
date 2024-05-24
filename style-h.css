@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, sans-serif;
+    color: darkcyan;
+}
+.inner-container{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+}
+.head-container{
+    flex: 1;
+    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+.inner-container-content{
+    gap: 24px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: cadetblue 3px solid;
+}
+.faq-container{
+    padding-bottom: 10px;
+    border-bottom: cadetblue 3px solid;
+}
+.faq-flex-column1{
+    border-bottom: cadetblue 2px dashed;
+}
+.icc-actions {
+    display: flex;
+    align-items: flex-start;
+}
+.icc-button-test{
+    background-color: cadetblue;
+    font-size: 20px;
+    margin-right: 20px;
+    border: 0px;
+}
+.icc-button-rtu{
+    color: cadetblue;
+    font-size: 20px;
+    border: 0px;
+}
+.icc-button-content{
+    text-decoration: none;
+    color: darkolivegreen;
+}
+.faq-q{
+    gap: 16px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 600;
+}
+.faq-q-c{
+    gap: 16px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.faq-qa{
+    margin-bottom: 10px;
+}
+.home-container{
+    gap: 16px;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.clean-href{
+    text-decoration: none;
+    color: black;
+}
