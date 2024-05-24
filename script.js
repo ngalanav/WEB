@@ -1,6 +1,6 @@
 document.getElementById('quizForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    clearInterval(interval);
     // Example
     const correctAnswers = {
         q1: 'Example Answer for Q1',
@@ -39,11 +39,11 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
     });
 });
 
-
+var interval;
 
 function startTimer(duration, display) {
     var timer = duration, hours, minutes, seconds;
-    var interval = setInterval(function () {
+    interval = setInterval(function () {
         hours = parseInt((timer / 3600) % 24, 10);
         minutes = parseInt((timer / 60) % 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -59,10 +59,12 @@ function startTimer(duration, display) {
             document.getElementById('quizForm').submit(); // Submit the form automatically
         }
     }, 1000);
+
+    
 }
 
 window.onload = function () {
-    var eighteenMinutes = 60 * 15;
+    var time = 60 * 15;
     var display = document.getElementById('timer');
-    startTimer(eighteenMinutes, display);
+    startTimer(time, display);
 };
