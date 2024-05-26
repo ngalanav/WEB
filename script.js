@@ -6,10 +6,25 @@ function inputChange(element){
         if (parseInt(storedTime) == 0) {
             answerText = sessionStorage.getItem(element.target.parentNode.id);
             if (element.target.type == "checkbox"){
-                if (sessionStorage.getItem(element.target.parentNode.id + element.target.value)) {
+                if (sessionStorage.getItem(element.target.parentNode.parentNode.id + element.target.value)) {
                     element.target.checked = true
                 } else {
                     element.target.checked = false;
+                }
+            } else if (element.target.type == "radio"){
+                answerText = sessionStorage.getItem(element.target.parentNode.parentNode.id);
+                if (answerText == element.target.value) {
+                    element.target.checked = true;
+                } else {
+                    element.target.checked = false;
+                    // jaatrod pareizas vertibas un jaieliek
+                    var radios = element.target.parentNode.parentNode.querySelectorAll('input[type="radio"]');
+                    for (var i = 0; i < radios.length; i++) {
+                        if (radios[i].value === answerText) {
+                            radios[i].checked = true;
+                            break;
+                        }
+                    }
                 }
             } else {
                 if (answerText) {
@@ -24,6 +39,10 @@ function inputChange(element){
                     sessionStorage.setItem(element.target.parentNode.parentNode.id + element.target.value, "1");
                 } else if (sessionStorage.getItem(element.target.parentNode.parentNode.id + element.target.value)) {
                     sessionStorage.removeItem(element.target.parentNode.parentNode.id + element.target.value);
+                }
+            } else if (element.target.type == "radio"){
+                if (element.target.checked){
+                    sessionStorage.setItem(element.target.parentNode.parentNode.id, element.target.value);
                 }
             } else {
                 sessionStorage.setItem(element.target.parentNode.id, element.target.value);
@@ -49,8 +68,19 @@ function setDefaultValue(element) {
             }
         });
     } else if ((answerText = sessionStorage.getItem(element.id)) && answerText) {
-        // var nemt pirmo , jo teksta ievade ir tik viena
-        element.querySelectorAll("input")[0].value = answerText;
+        var selectedElement = element.querySelectorAll("input")[0];
+        if (selectedElement.type == "radio"){
+            var radios = selectedElement.parentNode.parentNode.querySelectorAll('input[type="radio"]');
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].value === answerText) {
+                    radios[i].checked = true;
+                    break;
+                }
+            }
+        } else{
+            // var nemt pirmo , jo teksta ievade ir tik viena
+            selectedElement.value = answerText;
+        }
     }
 }
 
