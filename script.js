@@ -1,5 +1,9 @@
-document.getElementById('quizForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('quizForm').addEventListener('submit', submitQuiz);
+
+function submitQuiz (event) {
+    if (event) {
+        event.preventDefault();
+    }
     clearInterval(interval);
     // Example
     const correctAnswers = {
@@ -37,7 +41,7 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
             feedback.innerHTML = "<span style='color: red;'>Atbilde nepareiza! Pareizā atbilde: " + correctDisplay + "</span>";
         }
     });
-});
+}
 
 var interval;
 
@@ -56,7 +60,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             clearInterval(interval);
-            document.getElementById('quizForm').submit(); // Submit the form automatically
+            submitQuiz();// Submit the form automatically
         }
     }, 1000);
 
@@ -64,7 +68,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var time = 60 * 15;
+    var time = 60 * 2;
     var display = document.getElementById('timer');
     startTimer(time, display);
 };
