@@ -57,18 +57,27 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = hours + ":" + minutes + ":" + seconds;
-
+       
         if (--timer < 0) {
             clearInterval(interval);
             submitQuiz();// Submit the form automatically
         }
+        if (timer > 0){
+            sessionStorage.setItem("time", timer)
+        }
+        
     }, 1000);
-
-    
 }
 
 window.onload = function () {
     var time = 60 * 2;
+    var storedTime = false;
+    if ((storedTime = sessionStorage.getItem("time")) && storedTime){
+        time = parseInt(storedTime);
+        console.log(time);
+    }
+
+
     var display = document.getElementById('timer');
     startTimer(time, display);
 };
