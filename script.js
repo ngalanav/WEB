@@ -104,11 +104,11 @@ function submitQuiz (event) {
     clearInterval(interval);
     // Example
     const correctAnswers = {
-        q1: 'Example Answer for Q1',
-        q2: ['Fakultāte A', 'Fakultāte C'], // Multiple correct answers
-        q3: 'Example Answer for Q3',
-        q4: 'dekāns1',
-        q5: ['fakultāte1', 'fakultāte2'], // All answers are correct
+        q1: 'Datorzinātnes un informācijas tehnoloģijas fakultāte',
+        q2: ['DITF', 'Enerģētikas un elektrotehnikas fakultāte'], // Multiple correct answers
+        q3: 'DITEF',
+        q4: 'Agris Ņikitenko',
+        q5: ['BMF', 'DTF', 'IEVF', 'DITEF', 'LJA', 'ADI'], // All answers are correct
         q6: 'Example Answer for Q6',
         q7: 'Example Answer for Q7',
         q8: 'Example Answer for Q8',
