@@ -1,5 +1,36 @@
 document.getElementById('quizForm').addEventListener('submit', submitQuiz);
 
+function inputChange(element){
+    var storedTime, answerText;
+    if ((storedTime = sessionStorage.getItem("time")) && storedTime){
+        if (parseInt(storedTime) == 0) {
+            answerText = sessionStorage.getItem(element.target.parentNode.id);
+            if (answerText) {
+                element.target.value = answerText;
+            } else {
+                element.target.value = "";
+            }
+        } else {
+            sessionStorage.setItem(element.target.parentNode.id, element.target.value);
+        }
+    } else {
+        // ja laiks nav definets - bet lietotajs ievada atbildi, tad kaut kas nav pareizi
+        element.target.value = "";
+    }
+}
+
+function setDefaultValue(element) {
+    if ((answerText = sessionStorage.getItem(element.id)) && answerText){
+        element.querySelectorAll("input")[0].value = answerText;
+    }
+}
+
+function clearStoredValues(element){
+    if ((answerText = sessionStorage.getItem(element.id)) && answerText){
+        sessionStorage.removeItem(element.id)
+    }
+}
+
 function submitQuiz (event) {
     if (event) {
         event.preventDefault();
@@ -61,8 +92,10 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             clearInterval(interval);
             submitQuiz();// Submit the form automatically
+            var retryBlock = document.getElementById("retry-block");
+            retryBlock.style.display = "block";
         }
-        if (timer > 0){
+        if (timer > -1){
             sessionStorage.setItem("time", timer)
         }
         
@@ -70,9 +103,22 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
+
+    var storedTime = sessionStorage.getItem("time");
+    var elems=document.querySelectorAll(".question");
+    for(var i=0;i<elems.length;i++){
+        // ja ir laiks , ta nav pirma ielade
+        if (storedTime){
+            setDefaultValue(elems[i]);   
+        } else {
+            clearStoredValues(elems[i]);
+        }
+        elems[i].addEventListener("change", inputChange);
+    }
+
     var time = 60 * 2;
-    var storedTime = false;
-    if ((storedTime = sessionStorage.getItem("time")) && storedTime){
+
+    if (storedTime){
         time = parseInt(storedTime);
         console.log(time);
     }
