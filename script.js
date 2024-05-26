@@ -5,28 +5,64 @@ function inputChange(element){
     if ((storedTime = sessionStorage.getItem("time")) && storedTime){
         if (parseInt(storedTime) == 0) {
             answerText = sessionStorage.getItem(element.target.parentNode.id);
-            if (answerText) {
-                element.target.value = answerText;
+            if (element.target.type == "checkbox"){
+                if (sessionStorage.getItem(element.target.parentNode.id + element.target.value)) {
+                    element.target.checked = true
+                } else {
+                    element.target.checked = false;
+                }
             } else {
-                element.target.value = "";
+                if (answerText) {
+                    element.target.value = answerText;
+                } else {
+                    element.target.value = "";
+                }
             }
         } else {
-            sessionStorage.setItem(element.target.parentNode.id, element.target.value);
+            if (element.target.type == "checkbox"){
+                if (element.target.checked){
+                    sessionStorage.setItem(element.target.parentNode.parentNode.id + element.target.value, "1");
+                } else if (sessionStorage.getItem(element.target.parentNode.parentNode.id + element.target.value)) {
+                    sessionStorage.removeItem(element.target.parentNode.parentNode.id + element.target.value);
+                }
+            } else {
+                sessionStorage.setItem(element.target.parentNode.id, element.target.value);
+            }
         }
     } else {
         // ja laiks nav definets - bet lietotajs ievada atbildi, tad kaut kas nav pareizi
-        element.target.value = "";
+        if (element.target.type == "checkbox"){
+            element.target.checked = false;
+        } else {
+            element.target.value = "";
+        }
     }
 }
 
 function setDefaultValue(element) {
-    if ((answerText = sessionStorage.getItem(element.id)) && answerText){
+    if (element.querySelectorAll("input")[0].type == "checkbox"){
+        var elementId = element.id;
+        //ja checkbox , tad jaskrien cauri visiem
+        element.querySelectorAll("input").forEach(function(element) {
+            if (sessionStorage.getItem(elementId + element.value)) {
+                element.checked = true;
+            }
+        });
+    } else if ((answerText = sessionStorage.getItem(element.id)) && answerText) {
+        // var nemt pirmo , jo teksta ievade ir tik viena
         element.querySelectorAll("input")[0].value = answerText;
     }
 }
 
 function clearStoredValues(element){
-    if ((answerText = sessionStorage.getItem(element.id)) && answerText){
+    if (element.querySelectorAll("input")[0].type == "checkbox"){
+        var elementId = element.id;
+        element.querySelectorAll("input").forEach(function(element) {
+            if (sessionStorage.getItem(elementId + element.value)) {
+                sessionStorage.removeItem(elementId + element.value)
+            }
+        });
+    } else if ((answerText = sessionStorage.getItem(element.id)) && answerText){
         sessionStorage.removeItem(element.id)
     }
 }
@@ -72,6 +108,10 @@ function submitQuiz (event) {
             feedback.innerHTML = "<span style='color: red;'>Atbilde nepareiza! Pareizā atbilde: " + correctDisplay + "</span>";
         }
     });
+
+    var retryBlock = document.getElementById("retry-block");
+    retryBlock.style.display = "block";
+    sessionStorage.setItem("time", 0);
 }
 
 var interval;
@@ -92,8 +132,6 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             clearInterval(interval);
             submitQuiz();// Submit the form automatically
-            var retryBlock = document.getElementById("retry-block");
-            retryBlock.style.display = "block";
         }
         if (timer > -1){
             sessionStorage.setItem("time", timer)
@@ -113,6 +151,7 @@ window.onload = function () {
         } else {
             clearStoredValues(elems[i]);
         }
+        
         elems[i].addEventListener("change", inputChange);
     }
 
@@ -120,7 +159,6 @@ window.onload = function () {
 
     if (storedTime){
         time = parseInt(storedTime);
-        console.log(time);
     }
 
 
