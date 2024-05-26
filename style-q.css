@@ -146,6 +146,7 @@ h1 {
 
 .custom-checkbox:hover, .custom-radio:hover {
     background-color: #cccccc;
+    box-shadow: 0 0 0 4px #00B9F1;
 }
 
 label:has(input:checked) {
