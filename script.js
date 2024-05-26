@@ -109,13 +109,16 @@ function submitQuiz (event) {
         q3: 'DITEF',
         q4: 'Agris Ņikitenko',
         q5: ['BMF', 'DTF', 'IEVF', 'DITEF', 'LJA', 'ADI'], // All answers are correct
-        q6: 'Example Answer for Q6',
-        q7: 'Example Answer for Q7',
-        q8: 'Example Answer for Q8',
-        q9: 'Example Answer for Q9',
-        q10: 'Example Answer for Q10',
-        q11: 'Example Answer for Q11',
-        q12: 'Example Answer for Q12'
+        q6: ['v1', 'v4'],
+        q7: '2 stāvā',
+        q8: 'Ķīpsalas iela 6A',
+        q9: 'Pele',
+        q10: 'Visi',
+        q11: '302',
+        q12: '1862',
+        q13: 'IEVF',
+        q14: ['Sētas iela 1', 'Daugavgrīvas iela 2'],
+        q15: "Jā"
     };
 
     Object.keys(correctAnswers).forEach(qId => {
