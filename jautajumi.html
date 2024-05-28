@@ -6,39 +6,43 @@
     <title>RTU imposible quiz</title>
     <link rel="stylesheet" href="style-q.css">
     
-    
+    <style>
+        .flag {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="side-panel">
         <h2>Jautājumi</h2>
         <nav>
-            <a href="#q1">Jautajums 1</a>
-            <a href="#q2">Jautajums 2</a>
-            <a href="#q3">Jautajums 3</a>
-            <a href="#q4">Jautajums 4</a>
-            <a href="#q5">Jautajums 5</a>
-            <a href="#q6">Jautajums 6</a>
-            <a href="#q7">Jautajums 7</a>
-            <a href="#q8">Jautajums 8</a>
-            <a href="#q9">Jautajums 9</a>
-            <a href="#q10">Jautajums 10</a>
-            <a href="#q11">Jautajums 11</a>
-            <a href="#q12">Jautajums 12</a>
-            <a href="#q13">Jautajums 13</a>
-            <a href="#q14">Jautajums 14</a>
-            <a href="#q15">Jautajums 15</a>
+            <a href="#q1">Jautajums 1 <span class="flag" onclick="toggleFlag('q1', event)">🚩</span></a>
+            <a href="#q2">Jautajums 2 <span class="flag" onclick="toggleFlag('q2', event)">🚩</span></a>
+            <a href="#q3">Jautajums 3 <span class="flag" onclick="toggleFlag('q3', event)">🚩</span></a>
+            <a href="#q4">Jautajums 4 <span class="flag" onclick="toggleFlag('q4', event)">🚩</span></a>
+            <a href="#q5">Jautajums 5 <span class="flag" onclick="toggleFlag('q5', event)">🚩</span></a>
+            <a href="#q6">Jautajums 6 <span class="flag" onclick="toggleFlag('q6', event)">🚩</span></a>
+            <a href="#q7">Jautajums 7 <span class="flag" onclick="toggleFlag('q7', event)">🚩</span></a>
+            <a href="#q8">Jautajums 8 <span class="flag" onclick="toggleFlag('q8', event)">🚩</span></a>
+            <a href="#q9">Jautajums 9 <span class="flag" onclick="toggleFlag('q9', event)">🚩</span></a>
+            <a href="#q10">Jautajums 10 <span class="flag" onclick="toggleFlag('q10', event)">🚩</span></a>
+            <a href="#q11">Jautajums 11 <span class="flag" onclick="toggleFlag('q11', event)">🚩</span></a>
+            <a href="#q12">Jautajums 12 <span class="flag" onclick="toggleFlag('q12', event)">🚩</span></a>
+            <a href="#q13">Jautajums 13 <span class="flag" onclick="toggleFlag('q13', event)">🚩</span></a>
+            <a href="#q14">Jautajums 14 <span class="flag" onclick="toggleFlag('q14', event)">🚩</span></a>
+            <a href="#q15">Jautajums 15 <span class="flag" onclick="toggleFlag('q15', event)">🚩</span></a>
         </nav>
     </div>
     <div class="quiz-wrapper">
     <form class="quiz-container" id="quizForm">
         <h1>DITEF tests</h1>
         <div class="question" id="q1">
-            <p>1. Kā DITF atšifrē?</p>
+            <p>1. Kā DITF atšifrē? <button class="flag-button" type="button"  onclick="toggleFlag('q1', event)">🚩</button></p>
             <input type="text" placeholder="Jūsu atbilde">
             <div class="feedback" id="feedback1"></div>
         </div>
         <div class="question" id="q2">
-            <p>2. Kuras fakultātes apvienoja DITEF? (Vairākas atbildes)</p>
+            <p>2. Kuras fakultātes apvienoja DITEF? (Vairākas atbildes) <button class="flag-button" type="button" onclick="toggleFlag('q2', event)">🚩</button></p>
             <label class="custom-checkbox">BMF
                 <input type="checkbox" name="q2" value="BMF">
             </label>
@@ -58,13 +62,13 @@
             <div class="feedback" id="feedback2"></div>
         </div>
         <div class="question" id="q3">
-            <p>3. Kurai fakultātei pieder šī ēka?</p>
+            <p>3. Kurai fakultātei pieder šī ēka? <button class="flag-button" type="button" onclick="toggleFlag('q3', event)">🚩</button></p>
             <img src="faculty_building.jpg" alt="Faculty Building" class="q-img"><br>
             <input type="text" placeholder="Jūsu atbilde">
             <div class="feedback" id="feedback3"></div>
         </div>
         <div class="question" id="q4">
-            <p>4. Kā sauc DITEF fakultātes dekānu ?</p>
+            <p>4. Kā sauc DITEF fakultātes dekānu ? <button class="flag-button" type="button" onclick="toggleFlag('q4', event)">🚩</button></p>
             <label class="custom-radio">Ivars Godmanis
                 <input type="radio" name="q4" value="Ivars Godmanis">
             </label>
@@ -86,7 +90,7 @@
             <div class="feedback" id="feedback4"></div>
         </div>
         <div class="question" id="q5">
-            <p>5. Kuras fakultātes studenti ir vislielākajā izmisumā? (Radio pogas, visas atbildes pareizas)</p>
+            <p>5. Kuras fakultātes studenti ir vislielākajā izmisumā? (Radio pogas, visas atbildes pareizas)<button class="flag-button" type="button"  onclick="toggleFlag('q5', event)">🚩</button></p>
             <label class="custom-radio">BMF
                 <input type="radio" name="q5" value="BMF">
                 <span class="radio-mark"></span>
@@ -109,7 +113,7 @@
             <div class="feedback" id="feedback5"></div>
         </div>
         <div class="question" id="q6">
-            <p>6. Kā izskatījās DITF fakultāte?</p>
+            <p>6. Kā izskatījās DITF fakultāte? <button class="flag-button" type="button"  onclick="toggleFlag('q6', event)">🚩</button></p>
             <label class="custom-checkbox">
                 <img src="ekas/v1.jpg"/>
                 <input type="checkbox" name="q6" value="v1">
@@ -133,7 +137,7 @@
             <div class="feedback" id="feedback6"></div>
         </div>
         <div class="question" id="q7">
-            <p>7. Kurā stāvā atrodās datoriķu dekanāts?</p>
+            <p>7. Kurā stāvā atrodās datoriķu dekanāts? <button class="flag-button" type="button"  onclick="toggleFlag('q7', event)">🚩</button></p>
             <label class="custom-radio">1 stāvā
                 <input type="radio" name="q7" value="1 stāvā">
             </label>
@@ -149,7 +153,7 @@
             <div class="feedback" id="feedback7"></div>
         </div>
         <div class="question" id="q8">
-            <p>8. Kur atrodas RTU galvenā ēka?</p>
+            <p>8. Kur atrodas RTU galvenā ēka? <button class="flag-button" type="button"  onclick="toggleFlag('q8', event)">🚩</button></p>
             <label class="custom-radio">Kaļķu iela 1
                 <input type="radio" name="q8" value="Kaļķu iela 1">
             </label>
@@ -165,7 +169,7 @@
             <div class="feedback" id="feedback8"></div>
         </div>
         <div class="question" id="q9">
-            <p>9. Kurš dzīvnieks ir DITEF simbols?</p>
+            <p>9. Kurš dzīvnieks ir DITEF simbols? <button class="flag-button" type="button"  onclick="toggleFlag('q9', event)">🚩</button></p>
             <label class="custom-radio">Pele
                 <input type="radio" name="q9" value="Pele">
             </label>
@@ -181,12 +185,12 @@
             <div class="feedback" id="feedback9"></div>
         </div>
         <div class="question" id="q10">
-            <p>10. Cik studentu apmeklēja pirmo lekciju 2024. gada rudenī?</p>
+            <p>10. Cik studentu apmeklēja pirmo lekciju 2024. gada rudenī? <button class="flag-button" type="button"  onclick="toggleFlag('q10', event)">🚩</button></p>
             <input type="text" placeholder="Jūsu atbilde">
             <div class="feedback" id="feedback10"></div>
         </div>
         <div class="question" id="q11">
-            <p>11. Lielākā auditorija DITEF fakultātē?</p>
+            <p>11. Lielākā auditorija DITEF fakultātē? <button class="flag-button" type="button"  onclick="toggleFlag('q11', event)">🚩</button></p>
             <label class="custom-radio">205
                 <input type="radio" name="q11" value="205">
             </label>
@@ -202,7 +206,7 @@
             <div class="feedback" id="feedback11"></div>
         </div>
         <div class="question" id="q12">
-            <p>12. Kurā gadā tika dibināta Rīgas Tehniskā universitāte?</p>
+            <p>12. Kurā gadā tika dibināta Rīgas Tehniskā universitāte? <button class="flag-button" type="button"  onclick="toggleFlag('q12', event)">🚩</button></p>
             <label class="custom-radio">1862
                 <input type="radio" name="q12" value="1862">
             </label>
@@ -219,7 +223,7 @@
         </div>
 
         <div class="question" id="q13">
-            <p>13. Kura no fakultātēm neatrodas Ķīpsalas studentu pilsētiņā?</p>
+            <p>13. Kura no fakultātēm neatrodas Ķīpsalas studentu pilsētiņā? <button class="flag-button" type="button"  onclick="toggleFlag('q13', event)">🚩</button></p>
             <label class="custom-radio">Būvniecības un mašīnzinību fakultāte 
                 <input type="radio" name="q13" value="Būvniecības un mašīnzinību fakultāte">
             </label>
@@ -236,7 +240,7 @@
         </div>
 
         <div class="question" id="q14">
-            <p>14. Kāda ir iepriekšējā Datoriķu adrese?</p>
+            <p>14. Kāda ir iepriekšējā Datoriķu adrese? <button class="flag-button" type="button"  onclick="toggleFlag('q14', event)">🚩</button></p>
             <label class="custom-checkbox">Flotes iela 12 k-1 
                 <input type="checkbox" name="q14" value="Flotes iela 12 k-1">
             </label>
@@ -259,7 +263,7 @@
         </div>
 
         <div class="question" id="q15">
-            <p>15. Vai ir iespēja no RTU bibliotēkas nonākt DITEF fakultātē bez iziešanas ārā?</p>
+            <p>15. Vai ir iespēja no RTU bibliotēkas nonākt DITEF fakultātē bez iziešanas ārā? <button class="flag-button" type="button"  onclick="toggleFlag('q15', event)">🚩</button></p>
             <label class="custom-radio">Jā
                 <input type="radio" name="q15" value="Jā">
             </label>
