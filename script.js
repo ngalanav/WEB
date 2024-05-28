@@ -198,3 +198,14 @@ window.onload = function () {
     var display = document.getElementById('timer');
     startTimer(time, display);
 };
+
+function toggleFlag(questionId, event) {
+
+    var flagIcon = document.querySelector(`nav .flag[onclick="toggleFlag('${questionId}', event)"]`);
+    
+    if (flagIcon.style.display === 'none' || flagIcon.style.display === '') {
+        flagIcon.style.display = 'inline';
+    } else {
+        flagIcon.style.display = 'none';
+    }
+}
