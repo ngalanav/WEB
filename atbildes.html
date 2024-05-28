@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RTU imposible quiz</title>
+        <link rel="stylesheet" href="style-f.css">
+    </head>
+    <body>
+        <div class="home-container">
+            <div class="inner-container">
+                <div class="head-container">
+                    <div class="inner-container-content">
+                        <h1 class="icc-heading">
+                            <span>RTU Fakultātes - Tests</span><br>
+                            <div style="margin-top: 10px;"><span style="font-weight: normal;">Kopsavilkums</span></div>
+                        </h1>
+                        <div class="resultspan-container">
+                            <div class="resultspan-container-results">
+                                <p style="font-size: 20px; font-weight: bold;">
+                                    Tu abildēji pareizi uz <span id="correct-asnwers-count">x</span> jautājumiem.
+                                </p>
+                            </div>
+                            <div class="resultspan-container-resulttype">
+                                <span class="result-span">Tu esi...</span>
+                                <span class="result-span" id="user-type">vietturis</span>
+                            </div>
+                            <div class="resultspan-container-desc">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis enim diam, ultricies efficitur arcu sodales nec. Donec non lectus vitae felis lacinia blandit sit amet sed est. Suspendisse fermentum diam non rutrum porttitor. Mauris quis turpis vestibulum, ultrices urna quis, feugiat tellus. In in risus ante. Phasellus mattis metus sed lacus pellentesque pellentesque. Duis bibendum lacus ut ornare viverra. Vivamus molestie lacus ipsum, at porttitor risus volutpat non. Fusce fringilla quam felis, vel ullamcorper ipsum fermentum sed. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="icc-actions">
+                            <button class="icc-button-test">
+                            <a href="jautajumi.html" class="icc-button-content">Mēģināt atkal</a>
+                            </button>
+                            <button class="icc-button-rtu">
+                            <a href="https://www.rtu.lv/" class="icc-button-content">Uz RTU mājaslapu</a>
+                            </button>
+                        </div>
+                    </div>
+                <div style="padding-top: 10px;">©RTU 2024</div>
+            </div>
+        </div>
+    </body>
+    <script>
+        sessionStorage.removeItem("time");
+    </script>
+</html>
