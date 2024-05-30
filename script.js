@@ -121,6 +121,8 @@ function submitQuiz (event) {
         q15: "Jā"
     };
 
+    var correctAnswerCount = 0;
+
     Object.keys(correctAnswers).forEach(qId => {
         const question = document.getElementById(qId);
         let feedback = document.getElementById('feedback' + qId.substring(1));
@@ -136,6 +138,7 @@ function submitQuiz (event) {
 
         if (isCorrect) {
             feedback.innerHTML = "<span style='color: green;'>Atbilde pareiza!</span>";
+            correctAnswerCount = correctAnswerCount + 1;
         } else {
             let correctDisplay = Array.isArray(correctAnswers[qId]) ? correctAnswers[qId].join(", ") : correctAnswers[qId];
             feedback.innerHTML = "<span style='color: red;'>Atbilde nepareiza! Pareizā atbilde: " + correctDisplay + "</span>";
@@ -145,6 +148,8 @@ function submitQuiz (event) {
     var retryBlock = document.getElementById("retry-block");
     retryBlock.style.display = "block";
     sessionStorage.setItem("time", 0);
+    sessionStorage.setItem("correct_answers", correctAnswerCount);
+    sessionStorage.setItem("total_answers", 15);
 }
 
 var interval;
